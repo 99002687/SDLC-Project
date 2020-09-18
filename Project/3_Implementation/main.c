@@ -1,3 +1,10 @@
+#include "header.h"
+struct student
+{
+ int rollno;
+ char name[30];
+ float mark;
+}stud;
 void main()
 {
  int c, emp;
