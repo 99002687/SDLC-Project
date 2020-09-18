@@ -12,11 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-      
+    - uses: actions/checkout@v2      
     - name: make 
-      run:  make -C Project/3_Implementation/
-      
+      run:  make -C Project/3_Implementation      
     - name: application 
       run:  make run
       
