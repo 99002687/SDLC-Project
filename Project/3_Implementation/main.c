@@ -7,7 +7,7 @@ void main()
  {
   printf("\n\t---Select your choice---------\n");
   printf("\n\t1. INSERT\n\t2. DISPLAY\n\t3. SEARCH");
-  printf("\n\t4. DELETE\n\t5. UPDATE);
+  printf("\n\t4. DELETE\n\t5. UPDATE");
   printf("\n\t6. EXIT");
   printf("\n\n------------------------------------------\n");
   printf("\nEnter your choice:");
