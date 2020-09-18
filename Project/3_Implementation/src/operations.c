@@ -1,4 +1,5 @@
 //    FUNCTION TO INSERT RECORDS TO THE FILE
+#include "header.h"
 void insert()
 {
  FILE *fp;
