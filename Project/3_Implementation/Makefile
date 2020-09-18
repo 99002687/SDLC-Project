@@ -1,4 +1,5 @@
 SRC = src/operations.c\
+src/delete.c\
 main.c
 
 INC = -Iinc
