@@ -5,11 +5,11 @@ struct student
  char name[30];
  float mark;
 }stud;
-void insert()
- void disp() 
-  void search()
-  void deletefile()
-  void update()
-  void sort()
-  int avlrollno(int rno)
-  int empty()
+void insert();
+void disp();
+void search();
+  void deletefile();
+  void update();
+  void sort();
+  int avlrollno(int rno);
+  int empty();
