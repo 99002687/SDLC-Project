@@ -147,15 +147,4 @@ int empty()
  fclose(fp);
  return c;
 }
-//FUNCTION TO CHECK THE FILE IS EMPTY OR NOT
-int empty()
-{
- int c = 0;
- FILE *fp;
- fp = fopen("Record", "r");
- while (fread(&stud, sizeof(stud), 1, fp))
-  c = 1;
- fclose(fp);
- return c;
-}
 
