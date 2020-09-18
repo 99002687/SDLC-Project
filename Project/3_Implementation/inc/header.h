@@ -14,4 +14,3 @@ void search();
   void update();
   void sort();
   int avlrollno(int rno);
-  int empty();
