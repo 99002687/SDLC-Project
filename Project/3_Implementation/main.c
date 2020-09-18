@@ -7,8 +7,8 @@ void main()
  {
   printf("\n\t---Select your choice---------\n");
   printf("\n\t1. INSERT\n\t2. DISPLAY\n\t3. SEARCH");
-  printf("\n\t4. DELETE\n\t5. UPDATE\n\t6. SORT");
-  printf("\n\t7. EXIT");
+  printf("\n\t4. DELETE\n\t5. UPDATE);
+  printf("\n\t6. EXIT");
   printf("\n\n------------------------------------------\n");
   printf("\nEnter your choice:");
   scanf("%d", &c);
@@ -35,13 +35,6 @@ void main()
    update();
    break;
   case 6:
-   emp = empty();
-   if (emp == 0)
-    printf("\n The file is EMPTY\n");
-   else
-    sort();
-   break;
-  case 7:
    exit(1);
    break;
   default:
