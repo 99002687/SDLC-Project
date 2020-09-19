@@ -2,9 +2,9 @@
 #define __HEADER_H__
 #include "header.h"
 //    FUNCTION TO DELETE A RECORD
+#endif
 
-
-void deletefile()
+int deletefile()
 {
  FILE *fpo;
  FILE *fpt;
@@ -13,7 +13,10 @@ void deletefile()
  __fpurge(stdin);
  scanf("%d", &r);
  if (avlrollno(r) == 0)
+ {
   printf("Roll no %d is not available in the file\n", r);
+  return -1;
+ }
  else
  {
   fpo = fopen("Record", "r");
@@ -33,7 +36,8 @@ void deletefile()
   printf("\nRECORD DELETED\n");
   fclose(fpo);
   fclose(fpt);
+  return 1;
  }
 
 }
-#endif 
+ 
