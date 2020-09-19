@@ -5,7 +5,7 @@
 
 void main()
 {
- int c, emp;
+ int c, emp, temp;
  do
  {
   printf("\n\t---Select your choice---------\n");
@@ -33,7 +33,7 @@ void main()
    search();
    break;
   case 4:
-   deletefile();
+    temp = deletefile();
    break;
   case 5:
    update();
