@@ -67,38 +67,7 @@ void search()
 //    FUNCTION TO DELETE A RECORD
 
 
-void deletefile()
-{
- FILE *fpo;
- FILE *fpt;
- int r, s;
- printf("Enter the Roll no you want to delete :");
- __fpurge(stdin);
- scanf("%d", &r);
- if (avlrollno(r) == 0)
-  printf("Roll no %d is not available in the file\n", r);
- else
- {
-  fpo = fopen("Record", "r");
-  fpt = fopen("TempFile", "w");
-  while (fread(&stud, sizeof(stud), 1, fpo))
-  {
-   s = stud.rollno;
-   if (s != r)
-    fwrite(&stud, sizeof(stud), 1, fpt);
-  }
-  fclose(fpo);
-  fclose(fpt);
-  fpo = fopen("Record", "w");
-  fpt = fopen("TempFile", "r");
-  while (fread(&stud, sizeof(stud), 1, fpt))
-   fwrite(&stud, sizeof(stud), 1, fpo);
-  printf("\nRECORD DELETED\n");
-  fclose(fpo);
-  fclose(fpt);
- }
 
-}
 //    FUNCTION TO UPDATE THE RECORD
 void update()
 {
@@ -256,57 +225,5 @@ int empty()
  fclose(fp);
  return c;
 }
-// MAIN PROGRAM
-void main()
-{
- int c, emp;
- do
- {
-  printf("\n\t---Select your choice---------\n");
-  printf("\n\t1. INSERT\n\t2. DISPLAY\n\t3. SEARCH");
-  printf("\n\t4. DELETE\n\t5. UPDATE\n\t6. SORT");
-  printf("\n\t7. EXIT");
-  printf("\n\n------------------------------------------\n");
-  printf("\nEnter your choice:");
-  __fpurge(stdin);
-  scanf("%d", &c);
-  printf("\n");
-  switch (c)
-  {
-  case 1:
-   insert();
-   break;
-  case 2:
-   emp = empty();
-   if (emp == 0)
-    printf("\nThe file is EMPTY\n");
-   else
-    disp();
-   break;
-  case 3:
-   search();
-   break;
-  case 4:
-   deletefile();
-   break;
-  case 5:
-   update();
-   break;
-  case 6:
-   emp = empty();
-   if (emp == 0)
-    printf("\n The file is EMPTY\n");
-   else
-    sort();
-   break;
-  case 7:
-   exit(1);
-   break;
-  default:
-   printf("\nYour choice is wrong\nPlease try again...\n");
-   break;
 
-  }
- } while (c != 7);
-}
 #endif 
