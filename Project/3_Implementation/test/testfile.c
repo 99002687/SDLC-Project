@@ -7,7 +7,7 @@
 	#define PROJECT_NAME    "Student"
 	
 	#define SUCCESS 1
-	#define FAIL 1
+	#define FAIL -1
 
 	/* Prototypes for all the test functions */
 	void test_DeleteSuccess(void);
