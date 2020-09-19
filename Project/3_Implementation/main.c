@@ -33,7 +33,7 @@ void main()
    search();
    break;
   case 4:
-    temp = deletefile();
+    temp = deletefile(11);
    break;
   case 5:
    update();
