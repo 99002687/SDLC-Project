@@ -1,13 +1,6 @@
-#include<stdio.h>
-struct student
-{
- int rollno;
- char name[30];
- int mark1;
- int mark2;
- int mark3;
- 
-}stud;
+#ifndef __HEADER_H__
+#define __HEADER_H__
+#include"header.h"
 //    FUNCTION TO INSERT RECORDS TO THE FILE
 void insert()
 {
