@@ -6,7 +6,7 @@
 
 int deletefile(int rollno)
 {
- int roll_arr[] = [10, 11, 12, 13, 14, 15];
+ int roll_arr[] = {10, 11, 12, 13, 14, 15};
  int flag = 1;
  FILE *fpo;
  FILE *fpt;
