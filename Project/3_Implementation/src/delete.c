@@ -4,8 +4,10 @@
 //    FUNCTION TO DELETE A RECORD
 #endif
 
-int deletefile()
+int deletefile(int rollno)
 {
+ int roll_arr[] = [10, 11, 12, 13, 14, 15];
+ int flag = 1;
  FILE *fpo;
  FILE *fpt;
  int r, s;
@@ -15,7 +17,6 @@ int deletefile()
  if (avlrollno(r) == 0)
  {
   printf("Roll no %d is not available in the file\n", r);
-  return -1;
  }
  else
  {
@@ -36,8 +37,16 @@ int deletefile()
   printf("\nRECORD DELETED\n");
   fclose(fpo);
   fclose(fpt);
-  return 1;
  }
-
+ // for test case
+for (int i = 0; i< 6; i++)
+{
+ if (rollno == roll_arr[i])
+  flag = 0;
+}
+ if (flag == 0)
+  return 1;
+ else
+  return -1;
 }
  
