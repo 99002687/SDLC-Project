@@ -25,8 +25,8 @@
 	  
 	  
 	  /* Add your test functions in this format for testing*/
-	 CU_add_test(suite, "deletefile", test_DeleteSuccessCash);
-	 CU_add_test(suite, "deletefile", test_DeleteFailCash);
+	 CU_add_test(suite, "deletefile", test_DeleteSuccess);
+	 CU_add_test(suite, "deletefile", test_DeleteFail);
 	
 	
 	
