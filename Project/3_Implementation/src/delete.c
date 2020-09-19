@@ -4,10 +4,25 @@
 //    FUNCTION TO DELETE A RECORD
 #endif
 
-int deletefile(int rollno)
+int deletecheck(int rollno)
 {
  int roll_arr[] = {10, 11, 12, 13, 14, 15};
  int flag = 1;
+  // for test case
+for (int i = 0; i< 6; i++)
+{
+ if (rollno == roll_arr[i])
+  flag = 0;
+}
+ if (flag == 0)
+  return 1;
+ else
+  return -1;
+}
+
+void deletefile()
+{
+ 
  FILE *fpo;
  FILE *fpt;
  int r, s;
@@ -38,15 +53,6 @@ int deletefile(int rollno)
   fclose(fpo);
   fclose(fpt);
  }
- // for test case
-for (int i = 0; i< 6; i++)
-{
- if (rollno == roll_arr[i])
-  flag = 0;
-}
- if (flag == 0)
-  return 1;
- else
-  return -1;
+
 }
  
