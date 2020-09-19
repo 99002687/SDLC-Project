@@ -10,7 +10,8 @@ struct student
  int mark1;
  int mark2;
  int mark3;
- 
+ int total;
+float average;
 }stud;
 
 void insert();
