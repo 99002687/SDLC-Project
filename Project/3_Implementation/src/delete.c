@@ -1,3 +1,5 @@
+#ifndef __HEADER_H__
+#define __HEADER_H__
 #include "header.h"
 //    FUNCTION TO DELETE A RECORD
 
