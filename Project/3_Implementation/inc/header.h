@@ -1,10 +1,14 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<stdio.h>
 struct student
 {
  int rollno;
  char name[30];
- float mark;
+ int mark1;
+ int mark2;
+ int mark3;
+ 
 }stud;
 
 void insert();
