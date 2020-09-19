@@ -8,6 +8,7 @@ void deletefile()
  FILE *fpt;
  int r, s;
  printf("Enter the Roll no you want to delete :");
+ __fpurge(stdin);
  scanf("%d", &r);
  if (avlrollno(r) == 0)
   printf("Roll no %d is not available in the file\n", r);
