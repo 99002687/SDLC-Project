@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<stdio.h>
+#include <stdio_ext.h>
+
 struct student
 {
  int rollno;
