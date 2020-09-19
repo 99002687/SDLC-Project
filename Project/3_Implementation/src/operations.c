@@ -7,20 +7,18 @@ void insert()
  FILE *fp;
  fp = fopen("Record", "a");
  printf("Enter the Roll no   :");
- __fpurge(stdin);
  scanf("%d", &stud.rollno);
  printf("Enter the Name      :");
- __fpurge(stdin);
  scanf("%s", &stud.name);
  printf("Enter the mark1      :");
- __fpurge(stdin);
  scanf("%d", &stud.mark1);
+ 
  printf("Enter the mark2      :");
- __fpurge(stdin);
  scanf("%d", &stud.mark2);
  printf("Enter the mark3      :");
- __fpurge(stdin);
  scanf("%d", &stud.mark3);
+ stud.total=stud.mark1+stud.mark2+stud.mark3;
+ stud.average=stud.total/3;
  fwrite(&stud, sizeof(stud), 1, fp);
  fclose(fp);
 }
@@ -30,9 +28,9 @@ void disp()
 {
  FILE *fp1;
  fp1 = fopen("Record", "r");
- printf("\nRoll Number\tName\tMark1\tMark2\tMark3\n\n");
+ printf("\nRoll Number\tName\tMark1\tMark2\tMark3\tTotal\tAverage\n");
  while (fread(&stud, sizeof(stud), 1, fp1))
- printf("  %d\t\t%s\t%d\t%d\t%d\n", stud.rollno, stud.name, stud.mark1,stud.mark2,stud.mark3);
+ printf("  %d\t\t%s\t%d\t%d\t%d\t%d\t%.2f\n", stud.rollno, stud.name, stud.mark1,stud.mark2,stud.mark3,stud.total,stud.average);
  fclose(fp1);
 }
 //    FUNCTION TO SEARCH THE GIVEN RECORD
@@ -40,7 +38,6 @@ void search()
 {
  FILE *fp2;
  int r, s, avl;
- __fpurge(stdin);
  printf("\nEnter the Roll no you want to search  :");
  scanf("%d", &r);
  avl = avlrollno(r);
@@ -59,14 +56,14 @@ void search()
     printf("\nMark1    = %d\n", stud.mark1);
     printf("\nMark2    = %d\n", stud.mark2);
     printf("\nMark3    = %d\n", stud.mark3);
+    printf("\nTotal    = %d\n", stud.total);
+    printf("\nAverage    = %.2f\n", stud.average);
+    
    }
   }
   fclose(fp2);
  }
 }
-//    FUNCTION TO DELETE A RECORD
-
-
 
 //    FUNCTION TO UPDATE THE RECORD
 void update()
@@ -76,7 +73,6 @@ void update()
  FILE *fpo;
  int s, r, ch;
  printf("Enter roll number to update:");
- __fpurge(stdin);
  scanf("%d", &r);
  avl = avlrollno(r);
  if (avl == 0)
@@ -100,48 +96,41 @@ void update()
     printf("\n\t4. Update Mark3 of Roll Number %d", r);
     printf("\n\t5. Update all Name and Mark of Roll Number %d", r);
     printf("\nEnter your choice:");
-    __fpurge(stdin);
     scanf("%d", &ch);
     switch (ch)
     {
     case 1:
      printf("Enter Name:");
-      __fpurge(stdin);
      scanf("%s", &stud.name);
      break;
     case 2:
      printf("Enter Mark1 : ");
-      __fpurge(stdin);
      scanf("%d", &stud.mark1);
      break;
      case 3:
      printf("Enter Mark2 : ");
-      __fpurge(stdin);
      scanf("%d", &stud.mark2);
      break;
      case 4:
      printf("Enter Mark3 : ");
-      __fpurge(stdin);
      scanf("%d", &stud.mark3);
      break;
     case 5:
      printf("Enter Name: ");
-      __fpurge(stdin);
      scanf("%s", &stud.name);
      printf("Enter Mark: ");
-      __fpurge(stdin);
      scanf("%d", &stud.mark1);
      printf("Enter Mark2 : ");
-      __fpurge(stdin);
      scanf("%d", &stud.mark2);
       printf("Enter Mark3 : ");
-      __fpurge(stdin);
      scanf("%d", &stud.mark3);
      break;
     default:
      printf("Invalid Selection");
      break;
     }
+    stud.total=stud.mark1+stud.mark2+stud.mark3;
+     stud.average=stud.total/3;
     fwrite(&stud, sizeof(stud), 1, fpt);
    }
   }
@@ -182,7 +171,7 @@ void sort()
    }
   }
  }
- printf("Roll No.\tName\t\tMark1\t\tMark2\t\tMark3\n\n");
+ printf("Roll No.\tName\tMark1\tMark2\tMark3\tTotal\tAverage\n\n");
  count = c;
  for (i = 0; i<count; i++)
  {
@@ -190,7 +179,7 @@ void sort()
   while (fread(&stud, sizeof(stud), 1, fpo))
   {
    if (a[i] == stud.rollno)
-    printf("\n %d\t\t %s \t\t %d\t\t %d\t\t %d",stud.rollno, stud.name, stud.mark1, stud.mark2, stud.mark3);
+    printf("\n %d\t\t %s \t%d\t %d\t %d\t %d\t %.2f",stud.rollno, stud.name, stud.mark1, stud.mark2, stud.mark3, stud.total, stud.average);
   }
 
  }
