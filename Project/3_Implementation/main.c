@@ -11,6 +11,7 @@ void main()
   printf("\n\t6. EXIT");
   printf("\n\n------------------------------------------\n");
   printf("\nEnter your choice:");
+  __fpurge(stdin);
   scanf("%d", &c);
   printf("\n");
   switch (c)
