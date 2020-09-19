@@ -25,8 +25,8 @@
 	  
 	  
 	  /* Add your test functions in this format for testing*/
-	 CU_add_test(suite, "deletefile", test_DeleteSuccess);
-	 CU_add_test(suite, "deletefile", test_DeleteFail);
+	 CU_add_test(suite, "deletecheck", test_DeleteSuccess);
+	 CU_add_test(suite, "deletecheck", test_DeleteFail);
 	
 	
 	
@@ -45,11 +45,11 @@
 	
 	/* Write all the test functions */ 
 	void test_DeleteSuccess(void) {
-	 CU_ASSERT(SUCCESS ==  deletefile(15));
+	 CU_ASSERT(SUCCESS ==  deletecheck(15));
 	}
 	
 	void test_DeleteFail(void) {
-	 CU_ASSERT(FAIL  == deletefile(20));
+	 CU_ASSERT(FAIL  == deletecheck(20));
 	}
 	
 	
