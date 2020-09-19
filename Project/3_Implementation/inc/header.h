@@ -17,7 +17,7 @@ float average;
 void insert();
 void disp();
 void search();
-  int deletefile();
+  int deletefile(int);
   void update();
   void sort();
   int avlrollno(int rno);
