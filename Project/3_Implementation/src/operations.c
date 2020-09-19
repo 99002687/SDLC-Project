@@ -14,14 +14,19 @@ void insert()
  FILE *fp;
  fp = fopen("Record", "a");
  printf("Enter the Roll no   :");
+ __fpurge(stdin);
  scanf("%d", &stud.rollno);
  printf("Enter the Name      :");
+ __fpurge(stdin);
  scanf("%s", &stud.name);
  printf("Enter the mark1      :");
+ __fpurge(stdin);
  scanf("%d", &stud.mark1);
  printf("Enter the mark2      :");
+ __fpurge(stdin);
  scanf("%d", &stud.mark2);
  printf("Enter the mark3      :");
+ __fpurge(stdin);
  scanf("%d", &stud.mark3);
  fwrite(&stud, sizeof(stud), 1, fp);
  fclose(fp);
@@ -42,6 +47,7 @@ void search()
 {
  FILE *fp2;
  int r, s, avl;
+ __fpurge(stdin);
  printf("\nEnter the Roll no you want to search  :");
  scanf("%d", &r);
  avl = avlrollno(r);
@@ -74,6 +80,7 @@ void deletefile()
  FILE *fpt;
  int r, s;
  printf("Enter the Roll no you want to delete :");
+ __fpurge(stdin);
  scanf("%d", &r);
  if (avlrollno(r) == 0)
   printf("Roll no %d is not available in the file\n", r);
@@ -107,6 +114,7 @@ void update()
  FILE *fpo;
  int s, r, ch;
  printf("Enter roll number to update:");
+ __fpurge(stdin);
  scanf("%d", &r);
  avl = avlrollno(r);
  if (avl == 0)
@@ -130,33 +138,42 @@ void update()
     printf("\n\t4. Update Mark3 of Roll Number %d", r);
     printf("\n\t5. Update all Name and Mark of Roll Number %d", r);
     printf("\nEnter your choice:");
+    __fpurge(stdin);
     scanf("%d", &ch);
     switch (ch)
     {
     case 1:
      printf("Enter Name:");
+      __fpurge(stdin);
      scanf("%s", &stud.name);
      break;
     case 2:
      printf("Enter Mark1 : ");
+      __fpurge(stdin);
      scanf("%d", &stud.mark1);
      break;
      case 3:
      printf("Enter Mark2 : ");
+      __fpurge(stdin);
      scanf("%d", &stud.mark2);
      break;
      case 4:
      printf("Enter Mark3 : ");
+      __fpurge(stdin);
      scanf("%d", &stud.mark3);
      break;
     case 5:
      printf("Enter Name: ");
+      __fpurge(stdin);
      scanf("%s", &stud.name);
      printf("Enter Mark: ");
+      __fpurge(stdin);
      scanf("%d", &stud.mark1);
      printf("Enter Mark2 : ");
+      __fpurge(stdin);
      scanf("%d", &stud.mark2);
       printf("Enter Mark3 : ");
+      __fpurge(stdin);
      scanf("%d", &stud.mark3);
      break;
     default:
@@ -258,6 +275,7 @@ void main()
   printf("\n\t7. EXIT");
   printf("\n\n------------------------------------------\n");
   printf("\nEnter your choice:");
+  __fpurge(stdin);
   scanf("%d", &c);
   printf("\n");
   switch (c)
