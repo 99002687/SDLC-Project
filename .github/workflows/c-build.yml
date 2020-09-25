@@ -16,6 +16,9 @@ jobs:
     - name: make all
       run:  make all -C Project/3_Implementation
     
+    - name: make run
+      run:  make run -C Project/3_Implementation
+    
     
     
     
