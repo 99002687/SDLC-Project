@@ -6,8 +6,7 @@
 void main()
 {
  int c, emp;
- do
- {
+ l1:
   printf("\n\t---Select your choice---------\n");
   printf("\n\t1. INSERT\n\t2. DISPLAY\n\t3. SEARCH");
   printf("\n\t4. DELETE\n\t5. UPDATE");
@@ -21,31 +20,30 @@ void main()
   {
   case 1:
    insert();
-   break;
+   goto l1;
   case 2:
    emp = empty();
    if (emp == 0)
     printf("\nThe file is EMPTY\n");
    else
     disp();
-   break;
+   goto l1;
   case 3:
    search();
-   break;
+   goto l1;
   case 4:
     deletefile();
-   break;
+   goto l1;
   case 5:
    update();
-   break;
+   goto l1;
   case 6:
    exit(1);
-   break;
+   goto l1;
   default:
    printf("\nYour choice is wrong\nPlease try again...\n");
-   break;
+   goto l1;
 
   }
- } while (c != 7);
 }
 #endif 
