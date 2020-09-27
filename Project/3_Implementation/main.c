@@ -3,7 +3,7 @@
 
 #include "header.h"
 
-void main()
+int main()
 {
  int c, emp;
  l1:
@@ -45,5 +45,6 @@ void main()
    goto l1;
 
   }
+ return 0;
 }
 #endif 
