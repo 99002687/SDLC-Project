@@ -42,7 +42,7 @@ int main()
    goto l1;
   default:
    printf("\nYour choice is wrong\nPlease try again...\n");
-   exit();
+   exit(1);
   }
  return 0;
 }
